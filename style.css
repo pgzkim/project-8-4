@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "myfont";
+    src: url(font/myfont.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.title {
+  margin: 50px 20px;
+  font-size: 16px;
+  color: #7e7e82;
+  font-family: myfont;
+}
+
+/* карточка */
+.swiper-slide__card {
+  background: #ffffff;
+  border-radius: 5px;
+  width: 250px;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #c6c4c4;
+  margin: 0px 20px;
+  padding: 0px 20px;
+}
+
+.brand-logo {
+  width: 40%;
+  height: auto;
+}
+
+.apple {
+  width: 30%;
+}
+
+.arrow {
+  width: 40px;
+}
+
+/* mobilka */
+.services-swiper {
+  width: 100%;
+}
+
+.swiper-slide {
+  width: auto;
+  justify-content: space-between;
+}
+
+.swiper-pagination {
+  display: flex;
+  justify-content: center;
+}
+
+/* tablet */
+@media (min-width: 768px) {
+  .swiper-wrapper {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .swiper-slide {
+    width: 100% !important;
+  }
+
+  .swiper-pagination {
+    display: none;
+  }
+}
+
+/* desktop */
+@media (min-width: 1024px) {
+  .swiper-wrapper {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
