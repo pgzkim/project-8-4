@@ -1,6 +1,5 @@
 * {
     margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
@@ -9,6 +8,10 @@
     src: url(font/myfont.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
+}
+
+body {
+  padding-bottom: 30px;
 }
 
 .title {
@@ -47,6 +50,7 @@
 /* mobilka */
 .services-swiper {
   width: 100%;
+  position: relative;
 }
 
 .swiper-slide {
@@ -54,9 +58,8 @@
   justify-content: space-between;
 }
 
-.swiper-pagination {
-  display: flex;
-  justify-content: center;
+.show-all {
+  display: none;
 }
 
 /* tablet */
@@ -74,6 +77,23 @@
   .swiper-pagination {
     display: none;
   }
+
+  .show-all {
+    display: flex;
+    margin: 40px 20px;
+    width: 150px;
+    height: 10px;
+    gap: 10px;
+    font-size: 16px;
+    border-style: none;
+    background-color: transparent;
+    align-items: center;
+}
+
+.hidden {
+  display: none;
+}
+
 }
 
 /* desktop */

@@ -17,4 +17,25 @@ const swiper = new Swiper('.swiper', {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
 },
+
 })
+
+
+const btn = document.querySelector('.show-all');
+const hiddenItems = document.querySelectorAll('.hidden');
+const text = btn.querySelector('span');
+
+
+let opened = false;
+
+btn.addEventListener('click', () => {
+  hiddenItems.forEach(item => {
+    item.classList.toggle('hidden');
+  });
+
+  opened = !opened;
+  btn.textContent = opened ? 'Скрыть' : 'Показать все';
+});
+
+
+
