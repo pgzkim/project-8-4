@@ -10,7 +10,11 @@
     font-style: normal;
 }
 
-body {
+.swiper {
+  background-color: #d6d6d9;
+}
+
+.swiper-wrapper {
   padding-bottom: 30px;
 }
 
@@ -30,8 +34,8 @@ body {
   display: flex;
   justify-content: space-between;
   border: 1px solid #c6c4c4;
-  margin: 0px 20px;
   padding: 0px 20px;
+  margin: 0px 20px;
 }
 
 .brand-logo {
