@@ -1,7 +1,7 @@
 const swiper = new Swiper('.swiper', {
 // Optional parameters
     direction: 'horizontal',
-    slidesPerView: 1.3,
+    slidesPerView: 1.4,
     loop: true,
     pagination: {
         el: '.swiper-pagination',
@@ -36,6 +36,10 @@ btn.addEventListener('click', () => {
   opened = !opened;
   btn.textContent = opened ? 'Скрыть' : 'Показать все';
 });
+
+window.addEventListener('resize', () => {
+
+console.log('Window resized. Current width:', window.innerWidth);})
 
 
 

@@ -27,11 +27,11 @@
 
 /* карточка */
 .swiper-slide__card {
+  display: flex;
   background: #ffffff;
   border-radius: 5px;
-  width: 250px;
+  width: 200px;
   height: 80px;
-  display: flex;
   justify-content: space-between;
   border: 1px solid #c6c4c4;
   padding: 0px 20px;
@@ -51,19 +51,30 @@
   width: 40px;
 }
 
-/* mobilka */
-.services-swiper {
-  width: 100%;
-  position: relative;
-}
-
-.swiper-slide {
-  width: auto;
-  justify-content: space-between;
-}
-
 .show-all {
-  display: none;
+  display: flex;
+  margin: 40px 20px;
+  width: 150px;
+  height: 10px;
+  gap: 10px;
+  font-size: 16px;
+  border-style: none;
+  background-color: transparent;
+  align-items: center;
+}
+
+.hidden {
+display: none;
+}
+
+@media (max-width: 767px) {
+  .swiper-wrapper {
+    display: flex;
+  }
+
+  .show-all {
+    display: none;
+  }
 }
 
 /* tablet */
@@ -72,6 +83,7 @@
     display: grid !important;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
+    transform: none !important;
   }
 
   .swiper-slide {
@@ -82,27 +94,17 @@
     display: none;
   }
 
-  .show-all {
-    display: flex;
-    margin: 40px 20px;
-    width: 150px;
-    height: 10px;
-    gap: 10px;
-    font-size: 16px;
-    border-style: none;
-    background-color: transparent;
-    align-items: center;
-}
+  }
 
-.hidden {
-  display: none;
-}
-
-}
 
 /* desktop */
 @media (min-width: 1024px) {
   .swiper-wrapper {
     grid-template-columns: repeat(4, 1fr);
   }
+
+  .swiper-pagination {
+    display: none;
+  }
+
 }
