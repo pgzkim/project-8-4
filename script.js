@@ -22,10 +22,10 @@ const btn = document.querySelector('.show-all');
 const text = btn.querySelector('span');
 const allSlides = document.querySelectorAll('.swiper-slide');
 const tabletHiddenSlides = Array.from(allSlides).filter((slide) =>
-  slide.querySelector('.hiddenacer, .hiddensony'),
+  slide.classList.contains('hiddenacer') || slide.classList.contains('hiddensony'),
 );
 const extraSlides = Array.from(allSlides).filter((slide) =>
-  slide.querySelector('.hidden'),
+  slide.classList.contains('hidden'),
 );
 
 
