@@ -61,6 +61,7 @@
   border-style: none;
   background-color: transparent;
   align-items: center;
+  cursor: pointer;
 }
 
 .hidden {
@@ -73,6 +74,11 @@ display: none;
   }
 
   .show-all {
+    display: none;
+    transition: transform 0.2s ease;
+  }
+
+  .hiddenacer, .hiddensony {
     display: none;
   }
 }

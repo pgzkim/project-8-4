@@ -13,33 +13,74 @@ const swiper = new Swiper('.swiper', {
             enabled: false,
         }
     },
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-},
+
 
 })
 
 
 const btn = document.querySelector('.show-all');
-const hiddenItems = document.querySelectorAll('.hidden');
 const text = btn.querySelector('span');
+const allSlides = document.querySelectorAll('.swiper-slide');
+const tabletHiddenSlides = Array.from(allSlides).filter((slide) =>
+  slide.querySelector('.hiddenacer, .hiddensony'),
+);
+const extraSlides = Array.from(allSlides).filter((slide) =>
+  slide.querySelector('.hidden'),
+);
 
 
 let opened = false;
 
-btn.addEventListener('click', () => {
-  hiddenItems.forEach(item => {
-    item.classList.toggle('hidden');
+function setSlidesVisibility(slides, isVisible) {
+  slides.forEach((slide) => {
+    slide.style.display = isVisible ? '' : 'none';
   });
+}
 
+function updateSlides() {
+  const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024;
+  const isDesktopOrTablet = window.innerWidth >= 768;
+
+  if (!isDesktopOrTablet) {
+    setSlidesVisibility(allSlides, true);
+    return;
+  }
+
+  setSlidesVisibility(allSlides, true);
+
+  if (!opened) {
+    setSlidesVisibility(extraSlides, false);
+
+    if (isTablet) {
+      setSlidesVisibility(tabletHiddenSlides, false);
+    }
+  }
+}
+
+function setVisibilityForTablet() {
+  swiperSliders.forEach((slide, index) => {
+    if (index > 5) slide.classList.add("hidden");
+  });
+}
+
+function setVisibilityForPc() {
+  swiperSliders.forEach((slide, index) => {
+    if (index < 8) {
+      slide.classList.remove("hidden");
+    } else {
+      slide.classList.add("hidden");
+    }
+  });
+}
+
+btn.addEventListener('click', () => {
   opened = !opened;
-  btn.textContent = opened ? 'Скрыть' : 'Показать все';
+  text.textContent = opened ? 'Скрыть' : 'Показать все';
+  updateSlides();
 });
 
-window.addEventListener('resize', () => {
 
-console.log('Window resized. Current width:', window.innerWidth);})
+window.addEventListener('resize', updateSlides);
 
-
+updateSlides();
 
